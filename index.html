@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Card Layout Example">
+        <title>Card Layout Example</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/mustache.js"></script>
+    </head>
+    <body>
+        <!-- Mustache Template for rendering a card -->
+    	<script type="text/template" id="cardTemplate">
+	       <h1 class="card-heading">{{heading}}</h1>
+	       <div class="card-body">
+                <!-- If the featureImage is present in cards data, render it as an image element-->
+	       		{{#body.featuredImage}}
+	       				<img class="featuredImage" src="{{body.featuredImage}}">
+	       		{{/body.featuredImage}}
+                <!-- Render the card content -->
+	       		<p>{{body.content}}</p>
+	       </div>
+        </script>
+        <div class="container" id="container"></div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
